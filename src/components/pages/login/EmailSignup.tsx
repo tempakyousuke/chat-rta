@@ -1,6 +1,6 @@
 import React from "react";
-import HiInput from "components/Form/hiInput";
-import HiButton from "components/Button/hiButton";
+import HiInput from "components/Form/HiInput";
+import HiButton from "components/Button/HiButton";
 import { fireauth } from "utils/firebase";
 import { toast } from "react-toastify";
 

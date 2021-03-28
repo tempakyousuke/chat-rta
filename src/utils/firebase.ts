@@ -3,14 +3,12 @@ import "firebase/auth";
 import "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAL2ik01B3WkBQR8P8NJm9IhoxSaO2x_d0",
-  authDomain: "hide-and-seek-add2c.firebaseapp.com",
-  databaseURL: "https://hide-and-seek-add2c.firebaseio.com",
-  projectId: "hide-and-seek-add2c",
-  storageBucket: "hide-and-seek-add2c.appspot.com",
-  messagingSenderId: "542708033036",
-  appId: "1:542708033036:web:e1989138ab1c0829d8f029",
-  measurementId: "G-PQ827YCZVV",
+  apiKey: "AIzaSyDVw0F-otnc29wFM-JO23zaz3u2GJ7Q_4o",
+  authDomain: "chat-rta.firebaseapp.com",
+  projectId: "chat-rta",
+  storageBucket: "chat-rta.appspot.com",
+  messagingSenderId: "58897619418",
+  appId: "1:58897619418:web:b9c40863a69989e38808e3",
 };
 
 if (!firebase.apps.length) {
