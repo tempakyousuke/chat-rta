@@ -22,14 +22,11 @@ class UserList extends React.Component<{}, UserListState> {
   }
 
   componentDidMount = async () => {
+    // TODO: use subscribe
     await this.getData();
   }
 
   componentWillUnmount = () => {
-  }
-
-  onCollectionUpdate = (querySnapshot) => {
-    this.getData();
   }
 
   ItemList(props) {
