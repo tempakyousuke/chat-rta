@@ -2,7 +2,7 @@ import React from "react";
 import HiInput from "components/Form/HiInput";
 import HiButton from "components/Button/HiButton";
 import { fireauth, firestore } from "utils/firebase";
-import firebase from 'firebase/app';
+import firebase from "firebase/app";
 import { toast } from "react-toastify";
 
 type EmailSignupState = {
@@ -17,7 +17,7 @@ class EmailSignup extends React.Component<{}, EmailSignupState> {
     this.state = {
       email: "",
       password: "",
-      name: ""
+      name: "",
     };
   }
 
@@ -29,7 +29,7 @@ class EmailSignup extends React.Component<{}, EmailSignupState> {
       return;
     }
 
-    let result: firebase.auth.UserCredential
+    let result: firebase.auth.UserCredential;
 
     try {
       result = await fireauth.createUserWithEmailAndPassword(
@@ -53,9 +53,9 @@ class EmailSignup extends React.Component<{}, EmailSignupState> {
       throw new Error(e);
     }
 
-    await firestore.collection('users').doc(result.user.uid).set({
-      name: this.state.name
-    })
+    await firestore.collection("users").doc(result.user.uid).set({
+      name: this.state.name,
+    });
   }
 
   render(): JSX.Element {
