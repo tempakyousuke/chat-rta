@@ -13,6 +13,6 @@ jobs:
       FIREBASE_TOKEN: ${{ secrets.FIREBASE_JSON }}
     steps:
       - uses: actions/checkout@v2
-      - run: yarn && yarn add firebase-tools && yarn build
+      - run: yarn && npm install firebase-tools -g && yarn build
       - name: deploy
         run: firebase deploy --token "$FIREBASE_TOKEN"
