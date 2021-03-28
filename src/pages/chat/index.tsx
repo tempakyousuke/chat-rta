@@ -2,42 +2,42 @@ import Message from "components/Chat/Message";
 
 export default function Chat(): JSX.Element {
   const messages = [
-    { name: "A san", message: "Hey How are you today?", isMe: false, id: 1 },
+    { name: "A san", body: "Hey How are you today?", isMe: false, id: 1 },
     {
       name: "A san",
-      message:
+      body:
         "Lorem ipsum dolor sit amet, consectetur adipisicingelit. \nVel ipsa commodi illum saepe numquam maxime asperiores voluptate sit, minima perspiciatis.",
       isMe: false,
       id: 2,
     },
     {
       name: "B san",
-      message: "I'm ok what about you?",
+      body: "I'm ok what about you?",
       isMe: true,
       id: 3,
     },
     {
       name: "B san",
-      message: "Lorem ipsum dolor sit, amet consectetur adipisicing. ?",
+      body: "Lorem ipsum dolor sit, amet consectetur adipisicing. ?",
       isMe: true,
       id: 4,
     },
     {
       name: "A san",
-      message: "Lorem ipsum dolor sit amet !",
+      body: "Lorem ipsum dolor sit amet !",
       isMe: false,
       id: 5,
     },
     {
       name: "B san",
-      message: "Lorem ipsum dolor sit, amet consectetur adipisicing. ?",
+      body: "Lorem ipsum dolor sit, amet consectetur adipisicing. ?",
       isMe: true,
       id: 6,
       isSeen: true,
     },
     {
       name: "A san",
-      message: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing",
       isMe: false,
       id: 7,
     },
@@ -55,7 +55,7 @@ export default function Chat(): JSX.Element {
                     return (
                       <Message
                         name={message.name}
-                        message={message.message}
+                        body={message.body}
                         isMe={message.isMe}
                         key={message.id}
                         isSeen={message.isSeen}

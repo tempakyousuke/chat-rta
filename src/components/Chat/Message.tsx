@@ -1,6 +1,6 @@
 type MessageProps = {
   name: string;
-  message: string;
+  body: string;
   avator?: string;
   isMe: boolean;
   isSeen?: boolean;
@@ -25,7 +25,7 @@ export default function Message(props: MessageProps): JSX.Element {
           {props.name[0]}
         </div>
         <div className={messageClass}>
-          <div>{props.message}</div>
+          <div>{props.body}</div>
           {props.isMe && props.isSeen ? (
             <div className="absolute bottom-0 right-0 mr-2 -mb-5 text-xs text-gray-500">
               Seen
