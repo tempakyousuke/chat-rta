@@ -17,12 +17,13 @@ class UserList extends React.Component<{}, UserListState> {
   getData = async () => {
     const ref = firestore.collection('users');
     const snapshots = await ref.get();
-    const docs = snapshots.docs.map(doc => doc.data());
+    const docs = snapshots.docs.map(doc => {
+      return {id: doc.id, ...doc.data()}
+    });
     this.setState({ list: docs, });
   }
 
   componentDidMount = async () => {
-    // TODO: use subscribe
     await this.getData();
   }
 
@@ -32,7 +33,7 @@ class UserList extends React.Component<{}, UserListState> {
   ItemList(props) {
     const users = props.users;
     const listItems = users.map((user) =>
-      <li>{user.name}</li>
+      <li key={user.id}>{user.name}</li>
     );
     return (
       <ul>
