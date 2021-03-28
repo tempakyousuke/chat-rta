@@ -1,6 +1,6 @@
 import menus from "./menus";
-import AccordionButton from "./accordionButton";
-import NavLink from "./navLink";
+import AccordionButton from "./AccordionButton";
+import NavLink from "./NavLink";
 import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import { fireauth } from "utils/firebase";
@@ -57,7 +57,7 @@ function AccordionMenu(props: MenuProps): JSX.Element {
 
   return (
     <div className="py-2">
-      <div className="p-4 mt-5 text-xl font-bold">王様のかくれんぼ</div>
+      <div className="p-4 mt-5 text-xl font-bold">CHAT-RTA</div>
       {navi}
       {currentUser.currentUser ? (
         <div

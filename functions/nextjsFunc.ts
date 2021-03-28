@@ -12,8 +12,6 @@ const nextjsServer = next({
 });
 const nextjsHandle = nextjsServer.getRequestHandler();
 
-export default functions
-  .region("asia-northeast1")
-  .https.onRequest((req, res) => {
-    return nextjsServer.prepare().then(() => nextjsHandle(req, res));
-  });
+export default functions.https.onRequest((req, res) => {
+  return nextjsServer.prepare().then(() => nextjsHandle(req, res));
+});

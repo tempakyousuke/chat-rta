@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Drawer from "./drawer";
+import Drawer from "./Drawer";
 import { useState } from "react";
 
 function Nav(): JSX.Element {

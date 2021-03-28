@@ -1,4 +1,4 @@
-import AccordionMenu from "./accordionMenu";
+import AccordionMenu from "./AccordionMenu";
 
 type DrawerProps = {
   open: boolean;
