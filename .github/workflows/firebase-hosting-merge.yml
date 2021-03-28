@@ -15,4 +15,4 @@ jobs:
       - uses: actions/checkout@v2
       - run: yarn && yarn add firebase-tools -D && yarn build
       - name: deploy
-        run: yarn firebase deploy --token "$FIREBASE_TOKEN"
+        run: yarn firebase deploy --token "$FIREBASE_TOKEN" --only functions
