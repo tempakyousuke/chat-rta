@@ -1,7 +1,6 @@
 import React from "react";
 import { AuthContext } from "context/auth";
 import { withRouter, NextRouter } from "next/router";
-import SignupForm from "components/pages/login/Signup";
 import EmailLogin from "components/pages/login/EmailLogin";
 import EmailSignup from "components/pages/login/EmailSignup";
 

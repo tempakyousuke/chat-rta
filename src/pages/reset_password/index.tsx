@@ -1,7 +1,7 @@
 import { useState } from "react";
-import HiCard from "components/Card/hiCard";
-import HiInput from "components/Form/hiInput";
-import HiButton from "components/Button/hiButton";
+import HiCard from "components/Card/HiCard";
+import HiInput from "components/Form/HiInput";
+import HiButton from "components/Button/HiButton";
 import { toast } from "react-toastify";
 import { fireauth } from "utils/firebase";
 
