@@ -10,7 +10,7 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     env:
-      FIREBASE_TOKEN: ${{ secrets.FIREBASE_JSON }}
+      FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - run: yarn && yarn add firebase-tools -D && yarn build
