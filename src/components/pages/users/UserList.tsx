@@ -6,14 +6,16 @@ import { AuthContext } from "context/auth";
 
 type UserListState = {
   list: any[];
+  talking_user_ids: Set<String>;
 };
 
 class UserList extends React.Component<{}, UserListState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      list: []
-    }
+      list: [],
+      talking_user_ids: new Set(),
+    };
   }
 
   static contextType = AuthContext;
@@ -34,15 +36,15 @@ class UserList extends React.Component<{}, UserListState> {
       .where("user_ids", "array-contains", currentUser + "")
       .get()
       .then((querySnapshot) => {
-        const user_ids = new Set();
+        const talking_user_ids = new Set<String>();
         querySnapshot.forEach((doc) => {
-          user_ids.add(
+          talking_user_ids.add(
             doc.data().user_ids.find((user_id) => {
               return user_id != currentUser;
             })
           );
         });
-        return user_ids;
+        this.setState({ talking_user_ids });
       })
       .catch(function (error) {
         console.log("Could not get talking user ids.")
@@ -52,6 +54,7 @@ class UserList extends React.Component<{}, UserListState> {
 
   componentDidMount = async () => {
     await this.getList();
+    await this.getTalkingUsers();
   }
 
   componentWillUnmount = () => {
@@ -62,7 +65,11 @@ class UserList extends React.Component<{}, UserListState> {
       <div>
         <h1>USER LIST</h1>
         {this.state.list.map((user) => (
-          <UserItem key={user.id} user_name={user.name} is_talking={}></UserItem>
+          <UserItem
+            key={user.id}
+            user_name={user.name}
+            is_talking={this.state.talking_user_ids.has(user.id)}
+          ></UserItem>
         ))}
       </div>
     );
